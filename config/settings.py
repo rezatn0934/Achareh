@@ -160,3 +160,12 @@ REST_FRAMEWORK = {
         'phone': '3/h',
     }
 }
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
+}
