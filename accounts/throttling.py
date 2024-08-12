@@ -10,7 +10,7 @@ class PhoneRateThrottle(SimpleRateThrottle):
         """
         phone = request.data.get('phone')
         if not phone:            
-            phon = request.data.get('usernamephone')
+            phone = request.data.get('usernamephone')
             if not phone:
                 return None
         return self.cache_format % {
