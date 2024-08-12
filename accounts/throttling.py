@@ -9,8 +9,10 @@ class PhoneRateThrottle(SimpleRateThrottle):
         Return a cache key for the request, based on the phone number.
         """
         phone = request.data.get('phone')
-        if not phone:
-            return None
+        if not phone:            
+            phon = request.data.get('usernamephone')
+            if not phone:
+                return None
         return self.cache_format % {
             'scope': self.scope,
             'ident': phone
